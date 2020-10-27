@@ -3,8 +3,7 @@
 }:
 
 let
-  version = "1.2.6";
-  formattedVersion = lib.replaceChars ["."] ["_"] version;
+  version = "1.2.10";
 
   # Make sure we override python, so the correct version is chosen
   # for the bindings, if overridden
@@ -17,8 +16,8 @@ in stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "arvidn";
     repo = "libtorrent";
-    rev = "libtorrent-${formattedVersion}";
-    sha256 = "140gc9j6lymy5kr0gviqznpg4hl57rz2q6vpb9sjkkimr19lrvdr";
+    rev = "libtorrent-${version}";
+    sha256 = "1cf63pbgb7vayirwy21mrc2bsh9d8kh72v2hckbfhj9vsb89zy17";
   };
 
   enableParallelBuilding = true;
@@ -32,7 +31,7 @@ in stdenv.mkDerivation {
   '';
 
   outputs = [ "out" "dev" "python" ];
-
+  CXXFLAGS = "-std=c++14";
   configureFlags = [
     "--enable-python-binding"
     "--with-libiconv=yes"
