@@ -16,7 +16,7 @@ in stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "arvidn";
     repo = "libtorrent";
-    rev = "libtorrent-${version}";
+    rev = "v${version}";
     sha256 = "1f24y9gschgpq8xp78m4dmhwrkfd943x7qr6ycaxfp45ddvqzmbs";
   };
 
