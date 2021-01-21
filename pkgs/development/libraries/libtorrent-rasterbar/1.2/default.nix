@@ -3,7 +3,7 @@
 }:
 
 let
-  version = "1.2.10";
+  version = "1.2.11";
 
   # Make sure we override python, so the correct version is chosen
   # for the bindings, if overridden
@@ -17,7 +17,7 @@ in stdenv.mkDerivation {
     owner = "arvidn";
     repo = "libtorrent";
     rev = "libtorrent-${version}";
-    sha256 = "1cf63pbgb7vayirwy21mrc2bsh9d8kh72v2hckbfhj9vsb89zy17";
+    sha256 = "1f24y9gschgpq8xp78m4dmhwrkfd943x7qr6ycaxfp45ddvqzmbs";
   };
 
   enableParallelBuilding = true;
